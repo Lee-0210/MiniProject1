@@ -1,0 +1,26 @@
+.vscode
+**/.vscode
+
+# 바이너리 파일 제외
+*.exe
+*.dll
+*.so
+
+# 로그 파일 제외
+*.log
+
+# 임시 파일 제외
+*.tmp
+
+# 빌드 디렉터리 제외
+/build/
+
+# 사용자 설정 파일 제외
+*.user
+
+# 모든 .env 파일 제외
+**/.env
+
+# 모든 .log 파일을 제외하지만 app.log는 제외하지 않음
+*.log
+!app.log
