@@ -3,36 +3,42 @@ package com.team1.Controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextField;
 
 public class READController {
+
+    @FXML
+    private TextField Content;
+
+    @FXML
+    private TextField Title;
+
+    @FXML
+    private TextField Writer;
 
     @FXML
     private Button btnDelete;
 
     @FXML
+    private Button btnList;
+
+    @FXML
     private Button btnModify;
 
     @FXML
-    private Button btnWrite;
+    void Content(ActionEvent event) {
+
+    }
 
     @FXML
-    private TableColumn<?, ?> colContent;
+    void Title(ActionEvent event) {
+
+    }
 
     @FXML
-    private TableColumn<?, ?> colNO;
+    void Writer(ActionEvent event) {
 
-    @FXML
-    private TableColumn<?, ?> colReReg;
-
-    @FXML
-    private TableColumn<?, ?> colReg;
-
-    @FXML
-    private TableColumn<?, ?> colTitle;
-
-    @FXML
-    private TableColumn<?, ?> colWriter;
+    }
 
     @FXML
     void btnDelete(ActionEvent event) {
@@ -40,12 +46,12 @@ public class READController {
     }
 
     @FXML
-    void btnModify(ActionEvent event) {
+    void btnList(ActionEvent event) {
 
     }
 
     @FXML
-    void btnWrite(ActionEvent event) {
+    void btnModify(ActionEvent event) {
 
     }
 
