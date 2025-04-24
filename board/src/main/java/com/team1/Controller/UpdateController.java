@@ -43,19 +43,19 @@ public class UpdateController {
     }
 
     @FXML
-    void delete(ActionEvent event) {
-
-    }
-
-    @FXML
     void toList(ActionEvent event) throws Exception {
         SceneUtil.getInstance().switchScene(event, "/com/team1/UI/List.fxml");
     }
 
     @FXML
-    void toUpdate(ActionEvent event) {
+    void delete(ActionEvent event) {
 
     }
 
+    @FXML
+    void update(ActionEvent event) {
+        
+    }
+    
 
 }

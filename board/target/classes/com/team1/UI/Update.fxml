@@ -28,7 +28,7 @@
       <TextField fx:id="tfWriter" layoutX="173.0" layoutY="138.0" onAction="#writer" prefHeight="42.0" prefWidth="533.0" />
       <TextArea fx:id="taContent" layoutX="50.0" layoutY="196.0" onDragDetected="#content" prefHeight="234.0" prefWidth="657.0" />
       <Button fx:id="btnList" layoutX="37.0" layoutY="444.0" mnemonicParsing="false" onAction="#toList" prefHeight="42.0" prefWidth="123.0" text="목록 이동" />
-      <Button fx:id="btnUpdate" layoutX="592.0" layoutY="444.0" mnemonicParsing="false" onAction="#toUpdate" prefHeight="42.0" prefWidth="123.0" text="수정하기" />
+      <Button fx:id="btnUpdate" layoutX="592.0" layoutY="444.0" mnemonicParsing="false" onAction="#update" prefHeight="42.0" prefWidth="123.0" text="수정하기" />
       <Button fx:id="btnDelete" layoutX="457.0" layoutY="444.0" mnemonicParsing="false" onAction="#delete" prefHeight="42.0" prefWidth="123.0" text="삭제하기" />
    </children>
 </AnchorPane>
