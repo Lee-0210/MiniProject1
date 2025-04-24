@@ -27,7 +27,7 @@ import javafx.stage.Stage;
 
 public class ListController implements Initializable {
 
-    @FXML private TableView<Board> tableView;
+    @FXML private TableView<Board> boardTable;
     @FXML private TableColumn<Board, Integer> boardNo;
     @FXML private TableColumn<Board, String> title;
     @FXML private TableColumn<Board, String> writer;
@@ -60,7 +60,7 @@ public class ListController implements Initializable {
         regDate.setCellValueFactory(new PropertyValueFactory<>("RegDate"));
         updDate.setCellValueFactory(new PropertyValueFactory<>("UpdDate"));
 
-        // tableView.setItems(list);
+        boardTable.setItems(list);
 
         // 더블클릭
         // tableView.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -86,7 +86,7 @@ public class ListController implements Initializable {
 
     // 글쓰기 화면으로 이동
     public void moveToInsert(ActionEvent e) throws IOException {
-        SceneUtil.getInstance().switchScene(e, "UI/insert");
+        SceneUtil.getInstance().switchScene(e, "/com/team1/UI/Insert.fxml");
     }
 
     public void close(ActionEvent e) {
