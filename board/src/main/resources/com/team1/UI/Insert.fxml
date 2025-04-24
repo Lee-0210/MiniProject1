@@ -20,7 +20,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="419.0" mnemonicParsing="false" prefHeight="35.0" onAction="#Edit" prefWidth="113.0" text="등록 수정">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="419.0" mnemonicParsing="false" onAction="#Edit" prefHeight="35.0" prefWidth="113.0" text="등록 수정">
          <font>
             <Font size="18.0" />
          </font>
@@ -45,12 +45,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="233.0" layoutY="87.0" prefHeight="46.0" prefWidth="402.0" text="작성자를 입력하시오.">
+      <TextField layoutX="233.0" layoutY="87.0" prefHeight="46.0" prefWidth="402.0" promptText="작성자입력하세요.">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </TextField>
-      <TextField layoutX="233.0" layoutY="148.0" prefHeight="46.0" prefWidth="402.0" text="등록일자를 입력하시오." />
-      <TextArea layoutX="232.0" layoutY="207.0" prefHeight="187.0" prefWidth="440.0" text="내용을 입력하시오." />
+      <TextField layoutX="233.0" layoutY="148.0" prefHeight="46.0" prefWidth="402.0" promptText="등록일자를 입력하세요." />
+      <TextArea layoutX="232.0" layoutY="207.0" prefHeight="187.0" prefWidth="440.0" promptText="내용을 입력하세요." />
    </children>
 </AnchorPane>
