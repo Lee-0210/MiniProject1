@@ -24,12 +24,12 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="deleteBtn" layoutX="137.0" layoutY="435.0" mnemonicParsing="false" onAction="#moveToInsert" prefHeight="45.0" prefWidth="100.0" text="삭제">
+      <Button fx:id="deleteBtn" layoutX="127.0" layoutY="435.0" mnemonicParsing="false" onAction="#moveToInsert" prefHeight="45.0" prefWidth="100.0" text="삭제">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="closeBtn" layoutX="25.0" layoutY="435.0" mnemonicParsing="false" onAction="#close" prefHeight="45.0" prefWidth="100.0" text="종료">
+      <Button fx:id="closeBtn" layoutX="14.0" layoutY="435.0" mnemonicParsing="false" onAction="#close" prefHeight="45.0" prefWidth="100.0" text="종료">
          <font>
             <Font size="16.0" />
          </font>

@@ -48,9 +48,11 @@ public class ListController implements Initializable {
     // 초기화
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+        System.out.println("=========================" + tableView);
         List<Board> boardList = new ArrayList<>();
 
         boardList = boardService.list();
+
         ObservableList<Board> list = FXCollections.observableArrayList(boardList);
 
         boardNo.setCellValueFactory(new PropertyValueFactory<>("BoardNo"));
@@ -60,7 +62,8 @@ public class ListController implements Initializable {
         regDate.setCellValueFactory(new PropertyValueFactory<>("RegDate"));
         updDate.setCellValueFactory(new PropertyValueFactory<>("UpdDate"));
 
-        // tableView.setItems(list);
+        tableView.setItems(list);
+
 
         // 더블클릭
         // tableView.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -86,7 +89,7 @@ public class ListController implements Initializable {
 
     // 글쓰기 화면으로 이동
     public void moveToInsert(ActionEvent e) throws IOException {
-        SceneUtil.getInstance().switchScene(e, "UI/insert");
+        SceneUtil.getInstance().switchScene(e, "/com/team1/UI/KBG/Main.fxml");
     }
 
     public void close(ActionEvent e) {

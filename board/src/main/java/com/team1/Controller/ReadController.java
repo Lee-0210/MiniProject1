@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import com.team1.util.SceneUtil;
+import com.team1.Util.SceneUtil;
 
 public class ReadController {
 
