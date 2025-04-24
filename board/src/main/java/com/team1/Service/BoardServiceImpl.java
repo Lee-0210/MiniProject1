@@ -15,7 +15,7 @@ public class BoardServiceImpl implements BoardService {
 
     return list;
   }
-  
+
   @Override
   public Board read(int no) {
     System.out.println(no);
@@ -23,14 +23,14 @@ public class BoardServiceImpl implements BoardService {
     System.out.println("작동2");
     return board;
   }
-  
+
   @Override
   public int update(Board board) {
     int result = bDao.update(board);
 
     return result;
   }
-  
+
    @Override
   public int delete(int no) {
     int result = bDao.delete(no);

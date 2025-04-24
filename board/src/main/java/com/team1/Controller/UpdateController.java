@@ -9,7 +9,10 @@ import com.team1.Util.SceneUtil;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+<<<<<<< Updated upstream
 import javafx.scene.Parent;
+=======
+>>>>>>> Stashed changes
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
