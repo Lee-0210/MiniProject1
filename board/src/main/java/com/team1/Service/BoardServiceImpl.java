@@ -29,7 +29,7 @@ public class BoardServiceImpl implements BoardService {
     return result;
   }
   
-  @Override
+   @Override
   public int delete(int no) {
     int result = bDao.delete(no);
 

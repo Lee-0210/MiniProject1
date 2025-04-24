@@ -35,6 +35,7 @@ public class BoardDAO extends JDBConnection {
   }
 
 
+<<<<<<< HEAD
   // 글 수정
   public int update(Board board) {
     int result = 0;
@@ -60,6 +61,8 @@ public class BoardDAO extends JDBConnection {
     }
     return result;
 
+=======
+>>>>>>> main
   // 글 조회
   public Board read(int no) {
     String sql = "SELECT * FROM board WHERE no = ?";
@@ -81,11 +84,8 @@ public class BoardDAO extends JDBConnection {
 
   // 글 삭제
   public int delete(int no) {
-
     int result = 0;
-    
     String sql = "DELETE FROM board WHERE no = ?";
-    
     try {
       psmt = con.prepareStatement(sql);
       psmt.setInt(1, no);
