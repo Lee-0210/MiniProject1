@@ -24,7 +24,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="deleteBtn" layoutX="137.0" layoutY="435.0" mnemonicParsing="false" onAction="#moveToInsert" prefHeight="45.0" prefWidth="100.0" text="삭제">
+      <Button onAction="#delete" fx:id="deleteBtn" layoutX="137.0" layoutY="435.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="100.0" text="삭제">
          <font>
             <Font size="16.0" />
          </font>
