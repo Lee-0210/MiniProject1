@@ -29,7 +29,7 @@ board/target/classes/com/team1/util/SceneUtil.class
 target/
 
 # Java 관련
-*.class
+# *.class
 *.jar
 *.war
 *.ear
