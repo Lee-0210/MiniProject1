@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.team1.Controller.MainController">
    <children>
       <Label alignment="CENTER" layoutX="261.0" layoutY="46.0" prefHeight="35.0" prefWidth="228.0" text="게시판 등록">
          <font>
@@ -20,12 +20,12 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="419.0" mnemonicParsing="false" onAction="#Edit" prefHeight="35.0" prefWidth="113.0" text="등록 수정">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="419.0" mnemonicParsing="false" prefHeight="35.0" onAction="#Edit" prefWidth="113.0" text="등록 수정">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="283.0" layoutY="419.0" mnemonicParsing="false" onAction="#Delet" prefHeight="35.0" prefWidth="136.0" text="선택 삭제">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="283.0" layoutY="419.0" mnemonicParsing="false" onAction="#Delete" prefHeight="35.0" prefWidth="136.0" text="선택 삭제">
          <font>
             <Font size="18.0" />
          </font>
