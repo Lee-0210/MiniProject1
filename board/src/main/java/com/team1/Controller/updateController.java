@@ -1,10 +1,14 @@
 package com.team1.Controller;
 
+import java.io.IOException;
+
+import com.team1.Main;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class updateController {
+public class UpdateController {
 
     @FXML
     private Button btnDelete;
@@ -26,8 +30,8 @@ public class updateController {
     }
 
     @FXML
-    void toList(ActionEvent event) {
-        // Main.setRoot('UI/List');
+    void toList(ActionEvent event) throws IOException {
+        // Main.setRoot("UI/list");
     }
 
 
