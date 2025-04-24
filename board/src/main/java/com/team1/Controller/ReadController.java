@@ -47,7 +47,7 @@ public class ReadController {
         this.boardNo = boardNo;
         System.out.println(boardNo);
         Board board = boardService.read(boardNo);
-
+        // 임시1
         // TODO : 텍스트필드에 내용 표시
         tfTitle.setText(board.getTitle());
         System.out.println(board.getTitle());
