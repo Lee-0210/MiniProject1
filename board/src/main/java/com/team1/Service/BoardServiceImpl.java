@@ -37,4 +37,13 @@ public class BoardServiceImpl implements BoardService {
 
     return result;
   }
+
+
+
+  @Override
+  public int insert(Board board) {
+    int result = bDao.insert(board);
+    System.out.println("야");
+    return result;
+  }
 }
