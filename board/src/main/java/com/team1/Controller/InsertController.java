@@ -5,8 +5,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
 
-public class MainController {
+public class InsertController {
 
     @FXML
     void Delete(ActionEvent event) {
@@ -34,6 +35,7 @@ public class MainController {
 
     @FXML
     void Writer(ActionEvent event) {
+
         System.out.println("글쓰기");
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/team1/UI/List.fxml"));
@@ -46,6 +48,9 @@ public class MainController {
             e.printStackTrace();
         }
         }
+
+
+
     }
 
 
