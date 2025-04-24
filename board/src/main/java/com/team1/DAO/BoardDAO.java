@@ -33,4 +33,48 @@ public class BoardDAO extends JDBConnection {
     }
     return boardList;
   }
+
+
+  // 글 수정
+  public int update(Board board) {
+    int result = 0;
+
+    String sql = "UPDATE board" 
+    + "SET title = ?" 
+    + ", writer = ?" 
+    + ", content = ?" 
+    + ", updDate = now()"
+    + "WHERE boardNo = ?";
+
+    try {
+      psmt = con.prepareStatement(sql);
+      psmt.setString(1, getTitle());
+      psmt.setString(2, getWriter());
+      psmt.setString(3, getContent());
+      psmt.setInt(4, getBoardNo());
+
+      result = psmt.executeUpdate();
+    } catch (Exception e) {
+      System.err.println("수정중 에러 발생");
+      e.printStackTrace();
+    }
+    return result;
+  }
+
+  // 글 삭제
+  public int delete(int no) {
+    int result = 0;
+    String sql = "DELETE FROM board" 
+    + "WHERE boardNo = ?";
+
+    try {
+      psmt = con.prepareStatement(sql);
+      psmt.setInt(1, no);
+      result = psmt.executeUpdate();
+    } catch (Exception e) {
+      System.err.println("삭제중 에러 발생");
+      e.printStackTrace();
+    }
+    return result;
+  }
 }
