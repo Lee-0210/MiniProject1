@@ -1,6 +1,11 @@
 package com.team1.Controller;
 
+<<<<<<< HEAD
 import com.team1.Main;
+=======
+import java.io.IOException;
+
+>>>>>>> main
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
