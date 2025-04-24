@@ -41,7 +41,7 @@ public class ReadController {
 
         UpdateController updateController = (UpdateController) SceneUtil.getInstance().getController("/com/team1/UI/Update.fxml");
 		updateController.read(boardNo);
-		Parent root = SceneUtil.getInstance().getRoot(); 
+		Parent root = SceneUtil.getInstance().getRoot();
 
         SceneUtil.getInstance().switchScene(event, "/com/team1/UI/Update.fxml", root);
     }
