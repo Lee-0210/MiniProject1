@@ -24,3 +24,25 @@
 # 모든 .log 파일을 제외하지만 app.log는 제외하지 않음
 *.log
 !app.log
+
+# Java 관련
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE 설정 (예: IntelliJ, Eclipse)
+.idea/
+*.iml
+*.ipr
+*.iws
+*.log
+
+# 빌드 결과물
+target/
+
+# OS별 파일
+.DS_Store
+Thumbs.db
+
+target/
