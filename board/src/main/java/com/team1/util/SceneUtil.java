@@ -1,4 +1,4 @@
-package com.team1.Util;
+package com.team1.util;
 
 import java.io.IOException;
 
@@ -12,7 +12,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 public class SceneUtil {
     private static SceneUtil instance;
