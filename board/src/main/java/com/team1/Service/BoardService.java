@@ -6,7 +6,8 @@ import com.team1.DTO.Board;
 
 public interface BoardService {
 
-
+  //글 추가
+  int insert(Board board);
 
   // 리스트 조회
   List<Board> list();
