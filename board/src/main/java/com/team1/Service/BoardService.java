@@ -12,8 +12,12 @@ public interface BoardService {
   // 리스트 조회
   List<Board> list();
 
+
   // 글 조회
   Board read(int no);
+
+  // 수정
+  int update(Board board);
 
   // 삭제
   int delete(int no);
