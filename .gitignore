@@ -25,3 +25,25 @@
 *.log
 !app.log
 board/target/classes/com/team1/util/SceneUtil.class
+
+target/
+
+# Java 관련
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE 설정 (예: IntelliJ, Eclipse)
+.idea/
+*.iml
+*.ipr
+*.iws
+*.log
+
+# 빌드 결과물
+target/
+
+# OS별 파일
+.DS_Store
+Thumbs.db
