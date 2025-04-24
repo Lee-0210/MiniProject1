@@ -44,10 +44,11 @@ public class BoardDAO extends JDBConnection {
       psmt.setInt(1, no);
 
       rs = psmt.executeQuery();
-
-      board.setTitle(rs.getString(2));
-      board.setWriter(rs.getString(3));
-      board.setContent(rs.getString(4));
+      if(rs.next()) {
+        board.setTitle(rs.getString(2));
+        board.setWriter(rs.getString(3));
+        board.setContent(rs.getString(4));
+      }
     } catch (Exception e) {
 
     }

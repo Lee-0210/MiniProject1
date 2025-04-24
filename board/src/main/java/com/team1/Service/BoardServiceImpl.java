@@ -18,7 +18,9 @@ public class BoardServiceImpl implements BoardService {
 
   @Override
   public Board read(int no) {
+    System.out.println(no);
     Board board = bDao.read(no);
+    System.out.println("작동2");
     return board;
   }
 
