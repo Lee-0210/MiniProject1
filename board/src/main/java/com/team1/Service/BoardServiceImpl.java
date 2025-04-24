@@ -16,4 +16,16 @@ public class BoardServiceImpl implements BoardService {
     return list;
   }
 
+  @Override
+  public Board read(int no) {
+    Board board = bDao.read(no);
+    return board;
+  }
+
+  @Override
+  public int delete(int no) {
+    int result = bDao.delete(no);
+
+    return result;
+  }
 }
