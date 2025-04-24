@@ -60,13 +60,13 @@ public class UpdateController {
     }
     
     @FXML
-    void toUpdate(ActionEvent event) throws Exception {
-        Board board = new Board(tfTitle.getTitle(), tfWriter.getWriter(), taContent.getContent());
+    void toUpdate(ActionEvent event) throws IOException {
+        Board board = new Board(tfTitle.getText(), tfWriter.getText(), taContent.getText());
         board.setBoardNo(boardNo);
         int result = boardService.update(board);
         if (result > 0) {
             System.out.println("글 수정 완료");
-            SceneUtil.getInstance().switchScene(event, UI.LIST.getPath());
+            SceneUtil.getInstance().switchScene(event, "/com/team1/UI/Read.fxml");
         }
     }
     
@@ -80,7 +80,7 @@ public class UpdateController {
 
         if (result > 0) {
             System.out.println("삭제 완료");
-            SceneUtil.getInstance().switchScene(event, UI.LIST.getPath());
+            SceneUtil.getInstance().switchScene(event, "/com/team1/UI/List.fxml");
         }
     }
 

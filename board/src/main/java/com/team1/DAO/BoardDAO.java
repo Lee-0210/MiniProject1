@@ -35,7 +35,26 @@ public class BoardDAO extends JDBConnection {
   }
 
 
-<<<<<<< HEAD
+  
+  // 글 조회
+  public Board read(int no) {
+    String sql = "SELECT * FROM board WHERE no = ?";
+    Board board = new Board();
+    try {
+      psmt = con.prepareStatement(sql);
+      psmt.setInt(1, no);
+      
+      rs = psmt.executeQuery();
+      
+      board.setTitle(rs.getString(2));
+      board.setWriter(rs.getString(3));
+      board.setContent(rs.getString(4));
+    } catch (Exception e) {
+      
+    }
+    return board;
+  }
+
   // 글 수정
   public int update(Board board) {
     int result = 0;
@@ -49,39 +68,19 @@ public class BoardDAO extends JDBConnection {
 
     try {
       psmt = con.prepareStatement(sql);
-      psmt.setString(1, getTitle());
-      psmt.setString(2, getWriter());
-      psmt.setString(3, getContent());
-      psmt.setInt(4, getBoardNo());
-
       result = psmt.executeUpdate();
+      psmt.setString(1, board.getTitle());
+      psmt.setString(2, board.getWriter());
+      psmt.setString(3, board.getContent());
+      psmt.setInt(4, board.getBoardNo());
+
     } catch (Exception e) {
       System.err.println("수정중 에러 발생");
       e.printStackTrace();
     }
     return result;
-
-=======
->>>>>>> main
-  // 글 조회
-  public Board read(int no) {
-    String sql = "SELECT * FROM board WHERE no = ?";
-    Board board = new Board();
-    try {
-      psmt = con.prepareStatement(sql);
-      psmt.setInt(1, no);
-
-      rs = psmt.executeQuery();
-
-      board.setTitle(rs.getString(2));
-      board.setWriter(rs.getString(3));
-      board.setContent(rs.getString(4));
-    } catch (Exception e) {
-
-    }
-    return board;
+    
   }
-
   // 글 삭제
   public int delete(int no) {
     int result = 0;
@@ -94,9 +93,6 @@ public class BoardDAO extends JDBConnection {
       System.err.println("삭제중 에러 발생");
       e.printStackTrace();
     }
- 
+      return result;
     }
-
-    return result;
-  }
 }
