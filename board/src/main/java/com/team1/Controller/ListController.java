@@ -23,11 +23,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control. TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class ListController implements Initializable {
 
-    @FXML private TableView<Board> tableView;
+    @FXML private TableView<Board> boardTable;
     @FXML private TableColumn<Board, Integer> boardNo;
     @FXML private TableColumn<Board, String> title;
     @FXML private TableColumn<Board, String> writer;
@@ -38,6 +39,7 @@ public class ListController implements Initializable {
     @FXML private Button writeBtn;
     @FXML private Button deleteBtn;
 
+    int no;
 
     BoardService boardService = new BoardServiceImpl();
 
@@ -60,36 +62,44 @@ public class ListController implements Initializable {
         regDate.setCellValueFactory(new PropertyValueFactory<>("RegDate"));
         updDate.setCellValueFactory(new PropertyValueFactory<>("UpdDate"));
 
-        // tableView.setItems(list);
+        boardTable.setItems(list);
 
         // 더블클릭
-        // tableView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        boardTable.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
-        //     @Override
-        //     public void handle(MouseEvent e) {
-        //         if(e.getClickCount() == 2 & tableView.getSelectionModel().getSelectedItem() != null) {
-        //             int boardNo = tableView.getSelectionModel().getSelectedItem().getBoardNo();
+            @Override
+            public void handle(MouseEvent e) {
+                if(e.getClickCount() == 2 & boardTable.getSelectionModel().getSelectedItem() != null) {
+                    int boardNo = boardTable.getSelectionModel().getSelectedItem().getBoardNo();
 
-        //             try {
-		// 				ReadController readController = (ReadController) SceneUtil.getInstance().getController("UI/Read.fxml");
-		// 				readController.read(boardNo);
-		// 				Parent root = SceneUtil.getInstance().getRoot();
-		// 				SceneUtil.getInstance().switchScene(e, "UI/Read.fxml", root);
-		// 			} catch (IOException e) {
-		// 				System.err.println("[목록->읽기] 화면 이동 중 예외 발생..");
-		// 				e.printStackTrace();
-		// 			}
-        //         }
-        //     }
-        // });
+                    try {
+                        System.out.println("실행됨");
+						ReadController readController = (ReadController) SceneUtil.getInstance().getController("/com/team1/UI/Read.fxml");
+						readController.read(boardNo);
+						Parent root = SceneUtil.getInstance().getRoot();
+						SceneUtil.getInstance().switchScene(e, "/com/team1/UI/Insert.fxml", root);
+					} catch (Exception exe) {
+						System.err.println("[목록->읽기] 화면 이동 중 예외 발생..");
+						exe.printStackTrace();
+					}
+                }
+            }
+        });
     }
 
-    // 글쓰기 화면으로 이동
+    // 글쓰기 화면으로 이동 메서드
     public void moveToInsert(ActionEvent e) throws IOException {
-        SceneUtil.getInstance().switchScene(e, "UI/insert");
+        SceneUtil.getInstance().switchScene(e, "/com/team1/UI/Insert.fxml");
     }
 
+    // 종료 메서드
     public void close(ActionEvent e) {
         SceneUtil.getInstance().close(e);
+    }
+
+    // 게시글 삭제 메서드
+    public void delete() {
+        this.no = no;
+        boardService.delete(no);
     }
 }

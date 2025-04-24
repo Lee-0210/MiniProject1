@@ -8,6 +8,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+
+import com.team1.DTO.Board;
+import com.team1.Service.BoardService;
+import com.team1.Service.BoardServiceImpl;
 import com.team1.Util.SceneUtil;
 
 public class ReadController {
@@ -54,6 +58,10 @@ public class ReadController {
 
     }
 
+    BoardService boardService = new BoardServiceImpl();
+
+    int boardNo;
+
     // 목록 화면으로 이동
     public void moveToList(ActionEvent event) throws IOException {
         SceneUtil.getInstance().switchScene(event, "/com/team1/UI/List.fxml");
@@ -64,4 +72,12 @@ public class ReadController {
         SceneUtil.getInstance().switchScene(event, "/com/team1/UI/Update.fxml");
     }
 
+    // 조회 메서드
+    public void read(int boardNo) {
+        this.boardNo = boardNo;
+        Board board = boardService.read(boardNo);
+
+        // TODO : 텍스트필드에 내용 표시
+
+    }
 }
