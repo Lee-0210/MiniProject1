@@ -3,12 +3,14 @@ package com.team1.Controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
-public class READController {
+public class ReadController {
 
     @FXML
-    private TextField Content;
+    private TextArea TextContent;
 
     @FXML
     private TextField Title;
@@ -26,7 +28,7 @@ public class READController {
     private Button btnModify;
 
     @FXML
-    void Content(ActionEvent event) {
+    void TextContent(MouseEvent event) {
 
     }
 
