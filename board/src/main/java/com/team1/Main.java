@@ -22,7 +22,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
     }
-//가요
+
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
