@@ -34,13 +34,13 @@
             <Font size="35.0" />
          </font>
       </Label>
-      <TextField fx:id="Writer" layoutX="165.0" layoutY="81.0" prefHeight="45.0" prefWidth="476.0" />
-      <TextField fx:id="Title" layoutX="165.0" layoutY="137.0" prefHeight="45.0" prefWidth="476.0" />
+      <TextField fx:id="tfWriter" layoutX="165.0" layoutY="81.0" prefHeight="45.0" prefWidth="476.0" />
+      <TextField fx:id="tfTitle" layoutX="165.0" layoutY="137.0" prefHeight="45.0" prefWidth="476.0" />
       <Button fx:id="btnList" layoutX="38.0" layoutY="419.0" mnemonicParsing="false" onAction="#moveToList" prefHeight="45.0" prefWidth="95.0" text="목록">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <TextArea fx:id="TextContent" layoutX="165.0" layoutY="191.0" prefHeight="207.0" prefWidth="476.0" />
+      <TextArea fx:id="taContent" layoutX="165.0" layoutY="191.0" prefHeight="207.0" prefWidth="476.0" />
    </children>
 </AnchorPane>
