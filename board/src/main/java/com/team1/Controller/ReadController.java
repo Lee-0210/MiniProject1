@@ -9,6 +9,7 @@ import com.team1.Util.SceneUtil;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -37,7 +38,12 @@ public class ReadController {
 
     // 수정 화면으로 이동
     public void moveToModify(ActionEvent event) throws IOException {
-        SceneUtil.getInstance().switchScene(event, "/com/team1/UI/Update.fxml");
+
+        UpdateController updateController = (UpdateController) SceneUtil.getInstance().getController("/com/team1/UI/Update.fxml");
+		updateController.read(boardNo);
+		Parent root = SceneUtil.getInstance().getRoot(); 
+
+        SceneUtil.getInstance().switchScene(event, "/com/team1/UI/Update.fxml", root);
     }
 
     BoardService boardService = new BoardServiceImpl();

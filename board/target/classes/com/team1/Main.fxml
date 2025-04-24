@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<<<<<<< HEAD
+<?import javafx.scene.control.TextArea?>
+=======
+>>>>>>> main
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<<<<<<< HEAD
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+=======
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.team1.Controller.MainController">
+>>>>>>> main
+   <children>
+      <Label alignment="CENTER" layoutX="261.0" layoutY="46.0" prefHeight="35.0" prefWidth="228.0" text="게시판 등록">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+<<<<<<< HEAD
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="571.0" layoutY="419.0" mnemonicParsing="false" onAction="#Writer" prefHeight="35.0" prefWidth="136.0" text="글쓰기">
+=======
+      <Button layoutX="166.0" layoutY="284.0" mnemonicParsing="false" onAction="#toList" prefHeight="54.0" prefWidth="268.0" text="게시글 목록">
+>>>>>>> main
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+<<<<<<< HEAD
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="419.0" mnemonicParsing="false" onAction="#Edit" prefHeight="35.0" prefWidth="113.0" text="등록 수정">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="283.0" layoutY="419.0" mnemonicParsing="false" onAction="#Delet" prefHeight="35.0" prefWidth="136.0" text="선택 삭제">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="92.0" prefHeight="35.0" prefWidth="120.0" text="작성자">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="62.0" layoutY="153.0" prefHeight="35.0" prefWidth="101.0" text="등록일자">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="227.0" prefHeight="46.0" prefWidth="94.0" text="내용">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField layoutX="233.0" layoutY="87.0" prefHeight="46.0" prefWidth="402.0" text="작성자를 입력하시오.">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <TextField layoutX="233.0" layoutY="148.0" prefHeight="46.0" prefWidth="402.0" text="등록일자를 입력하시오." />
+      <TextArea layoutX="232.0" layoutY="207.0" prefHeight="187.0" prefWidth="440.0" text="내용을 입력하시오." />
+=======
+      <TextField fx:id="userid" layoutX="177.0" layoutY="129.0" prefHeight="40.0" prefWidth="268.0" />
+      <TextField fx:id="userpw" layoutX="177.0" layoutY="199.0" prefHeight="40.0" prefWidth="268.0" />
+      <Label layoutX="116.0" layoutY="129.0" prefHeight="50.0" prefWidth="50.0" text="아이디">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="116.0" layoutY="194.0" prefHeight="50.0" prefWidth="50.0" text="비번">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+>>>>>>> main
+   </children>
+</AnchorPane>
