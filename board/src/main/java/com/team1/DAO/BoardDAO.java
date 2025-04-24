@@ -34,11 +34,7 @@ public class BoardDAO extends JDBConnection {
     return boardList;
   }
 
-<<<<<<< Yoosik-Shin
-  
-=======
-  // 임시1
->>>>>>> main
+
   // 글 조회
   public Board read(int no) {
     String sql = "SELECT * FROM board WHERE no = ?";
