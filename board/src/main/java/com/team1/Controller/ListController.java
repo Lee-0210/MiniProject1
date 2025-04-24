@@ -78,7 +78,7 @@ public class ListController implements Initializable {
 						ReadController readController = (ReadController) SceneUtil.getInstance().getController("/com/team1/UI/Read.fxml");
 						readController.read(boardNo);
 						Parent root = SceneUtil.getInstance().getRoot();
-						SceneUtil.getInstance().switchScene(e, "/com/team1/UI/Insert.fxml", root);
+						SceneUtil.getInstance().switchScene(e, "/com/team1/UI/Read.fxml", root);
 					} catch (Exception exe) {
 						System.err.println("[목록->읽기] 화면 이동 중 예외 발생..");
 						exe.printStackTrace();
