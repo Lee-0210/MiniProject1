@@ -69,6 +69,7 @@ public class ListController implements Initializable {
 
             @Override
             public void handle(MouseEvent e) {
+                no = boardTable.getSelectionModel().getSelectedItem().getBoardNo();
                 if(e.getClickCount() == 2 & boardTable.getSelectionModel().getSelectedItem() != null) {
                     int boardNo = boardTable.getSelectionModel().getSelectedItem().getBoardNo();
 
@@ -77,7 +78,7 @@ public class ListController implements Initializable {
 						ReadController readController = (ReadController) SceneUtil.getInstance().getController("/com/team1/UI/Read.fxml");
 						readController.read(boardNo);
 						Parent root = SceneUtil.getInstance().getRoot();
-						SceneUtil.getInstance().switchScene(e, "/com/team1/UI/Insert.fxml", root);
+						SceneUtil.getInstance().switchScene(e, "/com/team1/UI/Read.fxml", root);
 					} catch (Exception exe) {
 						System.err.println("[목록->읽기] 화면 이동 중 예외 발생..");
 						exe.printStackTrace();
@@ -89,17 +90,20 @@ public class ListController implements Initializable {
 
     // 글쓰기 화면으로 이동 메서드
     public void moveToInsert(ActionEvent e) throws IOException {
+        System.out.println("글쓰기 화면 이동");
         SceneUtil.getInstance().switchScene(e, "/com/team1/UI/Insert.fxml");
     }
 
     // 종료 메서드
     public void close(ActionEvent e) {
+        System.out.println("종료");
         SceneUtil.getInstance().close(e);
     }
 
     // 게시글 삭제 메서드
     public void delete() {
-        this.no = no;
+        System.out.println("삭제 메서드 실행");
         boardService.delete(no);
+        initialize(null, null);
     }
 }
