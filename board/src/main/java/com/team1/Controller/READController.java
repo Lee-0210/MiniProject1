@@ -1,42 +1,41 @@
 package com.team1.Controller;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import com.team1.util.SceneUtil;
 
-public class READController {
-
-    @FXML
-    private TextField Content;
-
-    @FXML
-    private TextField Title;
+public class ReadController {
 
     @FXML
-    private TextField Writer;
+    private Button btn;
 
     @FXML
-    private Button btnDelete;
+    private TextArea taContent;
 
     @FXML
-    private Button btnList;
+    private TextField tfTitle;
 
     @FXML
-    private Button btnModify;
+    private TextField tfWriter;
 
     @FXML
-    void Content(ActionEvent event) {
+    void TextContent(MouseEvent event) {
 
     }
 
     @FXML
-    void Title(ActionEvent event) {
+    void TitleAction(ActionEvent event) {
 
     }
 
     @FXML
-    void Writer(ActionEvent event) {
+    void WriterAction(ActionEvent event) {
 
     }
 
@@ -53,6 +52,16 @@ public class READController {
     @FXML
     void btnModify(ActionEvent event) {
 
+    }
+
+    // 목록 화면으로 이동
+    public void moveToList(ActionEvent event) throws IOException {
+        SceneUtil.getInstance().switchScene(event, "/com/team1/UI/List.fxml");
+    }
+
+    // 수정 화면으로 이동
+    public void moveToModify(ActionEvent event) throws IOException {
+        SceneUtil.getInstance().switchScene(event, "/com/team1/UI/Update.fxml");
     }
 
 }
