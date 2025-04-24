@@ -47,3 +47,25 @@ target/
 # OS별 파일
 .DS_Store
 Thumbs.db
+
+# Java 관련
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE 설정 (예: IntelliJ, Eclipse)
+.idea/
+*.iml
+*.ipr
+*.iws
+*.log
+
+# 빌드 결과물
+target/
+
+# OS별 파일
+.DS_Store
+Thumbs.db
+
+target/
