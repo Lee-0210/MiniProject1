@@ -35,7 +35,7 @@ public class BoardDAO extends JDBConnection {
   }
 
 
-  
+
   // 글 조회
   public Board read(int no) {
     String sql = "SELECT * FROM board WHERE no = ?";
@@ -43,7 +43,7 @@ public class BoardDAO extends JDBConnection {
     try {
       psmt = con.prepareStatement(sql);
       psmt.setInt(1, no);
-      
+
       rs = psmt.executeQuery();
       if(rs.next()) {
         board.setTitle(rs.getString(2));
@@ -51,8 +51,10 @@ public class BoardDAO extends JDBConnection {
         board.setContent(rs.getString(4));
       }
     } catch (Exception e) {
-      
+
     }
+    System.out.println("=========" + no);
+    System.out.println("==========" + board);
     return board;
   }
 
@@ -60,27 +62,27 @@ public class BoardDAO extends JDBConnection {
   public int update(Board board) {
     int result = 0;
 
-    String sql = "UPDATE board" 
-    + "SET title = ?" 
-    + ", writer = ?" 
-    + ", content = ?" 
-    + ", updDate = now()"
-    + "WHERE boardNo = ?";
+    String sql = "UPDATE board"
+    + " SET title = ?"
+    + ", writer = ?"
+    + ", content = ?"
+    + ", updated_at = now()"
+    + " WHERE no = ?";
 
     try {
       psmt = con.prepareStatement(sql);
-      result = psmt.executeUpdate();
       psmt.setString(1, board.getTitle());
       psmt.setString(2, board.getWriter());
       psmt.setString(3, board.getContent());
       psmt.setInt(4, board.getBoardNo());
 
+      result = psmt.executeUpdate();
     } catch (Exception e) {
       System.err.println("수정중 에러 발생");
       e.printStackTrace();
     }
     return result;
-    
+
   }
   // 글 삭제
   public int delete(int no) {
