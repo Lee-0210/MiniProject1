@@ -45,10 +45,12 @@ public class ReadController {
 
     public void read(int boardNo) {
         this.boardNo = boardNo;
+        System.out.println(boardNo);
         Board board = boardService.read(boardNo);
 
         // TODO : 텍스트필드에 내용 표시
         tfTitle.setText(board.getTitle());
+        System.out.println(board.getTitle());
         tfWriter.setText(board.getWriter());
         taContent.setText(board.getContent());
     }

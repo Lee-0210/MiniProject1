@@ -6,6 +6,8 @@ import com.team1.DTO.Board;
 
 public interface BoardService {
 
+
+
   // 리스트 조회
   List<Board> list();
 
