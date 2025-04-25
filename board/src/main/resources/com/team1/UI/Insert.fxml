@@ -15,7 +15,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="571.0" layoutY="419.0" mnemonicParsing="false" onAction="#Writer" prefHeight="35.0" prefWidth="136.0" text="글쓰기">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="571.0" layoutY="419.0" mnemonicParsing="false" onAction="#insert" prefHeight="35.0" prefWidth="136.0" text="글쓰기">
          <font>
             <Font size="18.0" />
          </font>
@@ -25,17 +25,12 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="283.0" layoutY="419.0" mnemonicParsing="false" onAction="#Delete" prefHeight="35.0" prefWidth="136.0" text="선택 삭제">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="92.0" prefHeight="35.0" prefWidth="120.0" text="작성자">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="62.0" layoutY="153.0" prefHeight="35.0" prefWidth="101.0" text="등록일자">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="62.0" layoutY="153.0" prefHeight="35.0" prefWidth="101.0" text="제목">
          <font>
             <Font size="18.0" />
          </font>
@@ -45,12 +40,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="233.0" layoutY="87.0" prefHeight="46.0" prefWidth="402.0" promptText="작성자입력하세요.">
+      <TextField fx:id="tfwriter" layoutX="233.0" layoutY="87.0" prefHeight="46.0" prefWidth="402.0" promptText="작성자입력하세요.">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </TextField>
-      <TextField layoutX="233.0" layoutY="148.0" prefHeight="46.0" prefWidth="402.0" promptText="등록일자를 입력하세요." />
-      <TextArea layoutX="232.0" layoutY="207.0" prefHeight="187.0" prefWidth="440.0" promptText="내용을 입력하세요." />
+      <TextField fx:id="tftitle" layoutX="233.0" layoutY="148.0" prefHeight="46.0" prefWidth="402.0" promptText="제목을 입력하세요." />
+      <TextArea fx:id="tacontent" layoutX="232.0" layoutY="207.0" prefHeight="187.0" prefWidth="440.0" promptText="내용을 입력하세요." />
    </children>
 </AnchorPane>

@@ -1,14 +1,29 @@
 package com.team1.Controller;
 
+import java.io.IOException;
+
+import com.team1.DTO.Board;
+import com.team1.Service.BoardService;
+import com.team1.Util.SceneUtil;
+import com.team1.Service.BoardServiceImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 public class InsertController {
 
+    @FXML
+    private TextField tfwriter;
+
+    @FXML
+    private TextField tftitle;
+
+    @FXML
+    private TextArea tacontent;
     @FXML
     void Delete(ActionEvent event) {
       System.out.println("선택 삭제");
@@ -31,6 +46,8 @@ public class InsertController {
 
 
          }
+         BoardService boardService = new BoardServiceImpl();
+
 
 
     @FXML
@@ -48,10 +65,23 @@ public class InsertController {
             e.printStackTrace();
         }
         }
+        public void insert(ActionEvent event) throws IOException {
+            System.out.println("ㅇㅇㅇㅇ");
+            Board board = new Board(tftitle.getText(), tfwriter.getText(), tacontent.getText() );
+            int result = boardService.insert(board);
+            if( result > 0 ) {
+                System.out.println("글쓰기 처리 성공!");
+                SceneUtil.getInstance().switchScene(event, "/com/team1/UI/List.fxml" );
+            }
+        }
 
 
 
-    }
+	}
+
+
+
+
 
 
 

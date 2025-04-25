@@ -29,7 +29,7 @@ public class Main extends Application {
         // 게시판 창 크기 임의조절 불가능 코드
         stage.setResizable(false);
     }
-//가요
+
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }

@@ -1,5 +1,6 @@
 package com.team1.DAO;
 
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -94,7 +95,34 @@ public class BoardDAO extends JDBConnection {
     } catch (Exception e) {
       System.err.println("삭제중 에러 발생");
       e.printStackTrace();
-    }
-      return result;
-    }
+    } return result;
+  }
+
+
+
+  // 데이터 등록
+	public int insert(Board board) {
+		int result = 0;
+
+		String sql = " INSERT INTO board( title, writer, content ) "
+				   + " VALUES( ?, ?, ? ) ";
+
+		try {
+			psmt = con.prepareStatement(sql);			// 쿼리 실행 객체 생성
+			psmt.setString(1, board.getTitle());			// 1번 ? 에 제목을 매핑
+			psmt.setString(2, board.getWriter());		// 2번 ? 에 작성자을 매핑
+			psmt.setString(3, board.getContent());		// 3번 ? 에 내용을 매핑
+
+			result = psmt.executeUpdate();				// SQL 실행 요청, 적용된 데이터 개수를 받아옴
+														// 게시글 1개 쓰기 성공 시, result : 1
+														// 				실패 시, result : 0
+			// executeUpdate()
+			// : SQL (INSERT, UPDATE, DELETE)을 실행하고 적용된 데이터 개수를 int 타입으로 반환
+
+		} catch (SQLException e) {
+			System.err.println("게시글 등록 시, 에러 발생");
+			e.printStackTrace();
+		}
+		return result;
+	}
 }
