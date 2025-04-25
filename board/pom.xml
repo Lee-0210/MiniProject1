@@ -1,30 +1,35 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.team1</groupId>
-    <artifactId>board</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.team1</groupId>                <!-- 조직 ID -->
+    <artifactId>board</artifactId>              <!-- 프로젝트 ID -->
+    <version>1.0-SNAPSHOT</version>                 <!-- 프로젝트 버전 -->
+    <!-- 속성 -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>23</maven.compiler.source>
+        <maven.compiler.target>23</maven.compiler.target>
+        <jdk.version>23</jdk.version> <!-- JDK 버전 : 23 -->
+        <javafx.version>24</javafx.version> <!-- JavaFX 버전 : 24 -->
     </properties>
+    <!-- 의존성 라이브러리 -->
     <dependencies>
+        <!-- JavaFX -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>13</version>
+            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>13</version>
+            <version>${javafx.version}</version>
         </dependency>
         <!-- lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
+            <version>1.18.30</version>
             <scope>provided</scope>
         </dependency>
         <!-- mysql driver -->
@@ -37,14 +42,24 @@
     </dependencies>
     <build>
         <plugins>
+            <!-- Java 컴파일러 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <release>11</release>
+                    <release>${jdk.version}</release>
+                    <!-- 배포 컴파일과정에서의 lombok 관련 (lombok을 사용했다면 추가) -->
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.30</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
+            <!-- JavaFX 실행 -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
@@ -55,11 +70,52 @@
                         <!-- Usage: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.team1.App</mainClass>
+                            <mainClass>com.team1.Main</mainClass>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- Maven JAR Plugin (Jar파일 생성) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Main-Class>com.team1.Main</Main-Class>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>       <!-- Maven Assembly Plugin -->
+
+            <!-- (라이브러리 포함) 실행 가능한 fat JAR 생성 -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <descriptorRefs>
+                        <!-- 파일명 뒤에 붙일 참조이름 (원하는대로 바꿔도 됨.) -->
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.team1.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 </project>
