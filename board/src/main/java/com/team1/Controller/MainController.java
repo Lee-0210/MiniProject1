@@ -20,11 +20,11 @@ public class MainController {
 
       @FXML
       void toList(ActionEvent event) throws IOException {
-        if(!userid.getText().equals("윤홍민바보") || !userpw.getText().equals("1234")) {
+        if(!userid.getText().equals("1234") || !userpw.getText().equals("1234")) {
           Alert alert = new Alert(AlertType.CONFIRMATION);
           alert.setTitle("알림");
           alert.setHeaderText("알림");
-          alert.setContentText("아이디: 윤홍민바보 \n 비밀번호 : 1234");
+          alert.setContentText("아이디: 1234 \n 비밀번호 : 1234");
           alert.showAndWait();
           return;
         }
