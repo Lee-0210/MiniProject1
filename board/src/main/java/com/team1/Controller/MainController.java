@@ -6,13 +6,14 @@ import com.team1.Util.SceneUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 
 public class MainController {
 
       @FXML private TextField userid;
-      @FXML private TextField userpw;
+      @FXML private PasswordField userpw;
 
 
 
