@@ -1,16 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.team1</groupId>                <!-- 조직 ID -->
-    <artifactId>board</artifactId>              <!-- 프로젝트 ID -->
-    <version>1.0-SNAPSHOT</version>                 <!-- 프로젝트 버전 -->
-    <!-- 속성 -->
+    <groupId>com.team1</groupId>                <!-- 조직ID -->
+    <artifactId>board</artifactId>              <!-- 프로젝트ID -->
+    <version>1.0-SNAPSHOT</version>             <!-- 프로젝트 사용 버전 -->
+    <!-- 속성 작성  -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>23</maven.compiler.source>
         <maven.compiler.target>23</maven.compiler.target>
-        <jdk.version>23</jdk.version> <!-- JDK 버전 : 23 -->
-        <javafx.version>24</javafx.version> <!-- JavaFX 버전 : 24 -->
+        <maven.compiler.source>23</maven.compiler.source>
+        <jdk.version>23</jdk.version>               <!-- JDK 버전 -->
+        <javafx.version>23</javafx.version>         <!-- JavaFX 버전 -->
     </properties>
     <!-- 의존성 라이브러리 -->
     <dependencies>
@@ -40,6 +40,7 @@
             <scope>runtime</scope>
         </dependency>
     </dependencies>
+    <!-- 실제 실행 가능한 애들로 변환 -->
     <build>
         <plugins>
             <!-- Java 컴파일러 -->
@@ -88,9 +89,9 @@
                         </manifestEntries>
                     </archive>
                 </configuration>
-            </plugin>       <!-- Maven Assembly Plugin -->
+            </plugin>
 
-            <!-- (라이브러리 포함) 실행 가능한 fat JAR 생성 -->
+            <!-- 실행 가능한 fat JAR 생성 (라이브러리 포함 fat JAR 생성 추가) -->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.6.0</version>
